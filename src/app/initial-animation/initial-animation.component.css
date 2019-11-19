@@ -1,0 +1,10 @@
+#intial-animation-container{
+	height: 100%;
+	margin: 0em;
+}
+
+canvas{
+	background-color: #000021;
+	height: 100%;
+	margin: 0em;
+}

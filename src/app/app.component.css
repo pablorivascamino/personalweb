@@ -1,0 +1,24 @@
+.main_container{
+	height: 100%;
+}
+
+.main_header {
+	width:100%;
+	position: absolute;
+    color: #ffffff;
+    font-size: 10em;
+    top: 0;
+    text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height:100%;
+}
+
+.main_header_content {
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+

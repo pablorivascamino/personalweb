@@ -36,7 +36,7 @@ export class InputUserDataFormComponent implements OnInit {
     
     invalidEmail()
     {
-      return (this.submitted && this.userForm.controls.email.errors != null);
+      return ((this.submitted || this.userForm.controls.email.value!=='') && this.userForm.controls.email.errors != null);
     }
     
     onSubmit(form)

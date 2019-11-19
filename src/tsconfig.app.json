@@ -1,5 +1,6 @@
 {
   "extends": "../tsconfig.json",
+  "lib": ["es5"],
   "compilerOptions": {
     "outDir": "../out-tsc/app",
     "types": []
