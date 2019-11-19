@@ -1,6 +1,7 @@
 #intial-animation-container{
 	height: 100%;
 	margin: 0em;
+	line-height:0;
 }
 
 canvas{

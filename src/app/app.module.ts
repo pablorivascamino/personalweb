@@ -10,14 +10,17 @@ import { InputUserDataFormComponent } from './input-user-data-form/input-user-da
 import { MessageService } from './services/message.service';
 import { InitialAnimationComponent } from './initial-animation/initial-animation.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule( {
     declarations: [
         AppComponent,
         InputUserDataFormComponent,
-        InitialAnimationComponent
+        InitialAnimationComponent,
+        NavBarComponent
     ],
     imports: [
+        BrowserAnimationsModule,
         FontAwesomeModule,
         HttpClientModule,
         BrowserModule,

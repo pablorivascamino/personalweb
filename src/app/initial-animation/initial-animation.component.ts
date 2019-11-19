@@ -28,8 +28,8 @@ export class InitialAnimationComponent implements OnInit {
     private polygon: AnimationPoint[] = [];
 
     constructor() {
-        this.windowHeight = window.innerHeight;
-        this.windowWidth = window.innerWidth;
+        this.windowWidth = document.body.clientWidth;
+        this.windowHeight = document.body.clientHeight;
 
         fromEvent( document.body, 'mousemove' ).subscribe( e => {
             this.mouseX = e.pageX;
@@ -38,18 +38,14 @@ export class InitialAnimationComponent implements OnInit {
     }
 
     onResize( event ) {
-        this.windowWidth = event.target.innerWidth;
-        this.windowHeight = event.target.innerHeight;
-        this.canvas.nativeElement.width = event.target.innerWidth;
-        this.canvas.nativeElement.width = event.target.innerHeight;
-
+        this.windowWidth = document.body.clientWidth;
+        this.windowHeight = document.body.clientHeight;
         this.render();
     }
 
     ngOnInit() {
         this.render();
         this.animate();
-
     }
 
     private initializePoints( canvas: ElementRef<HTMLCanvasElement> ) {
@@ -68,9 +64,11 @@ export class InitialAnimationComponent implements OnInit {
     }
 
     render() {
+        this.canvas.nativeElement.width = document.body.clientWidth;
+        this.canvas.nativeElement.height = document.body.clientHeight;
+
         this.ctx = this.canvas.nativeElement.getContext( '2d' );
-        this.canvas.nativeElement.width = this.windowWidth;
-        this.canvas.nativeElement.height = this.windowHeight;
+
         this.ctx.clearRect( 0, 0, this.windowWidth, this.windowHeight );
 
         this.initializePoints( this.canvas );
@@ -86,6 +84,11 @@ export class InitialAnimationComponent implements OnInit {
     }
 
     animate = () => {
+        if ( this.canvas.nativeElement.width !== document.body.clientWidth ) {
+            this.canvas.nativeElement.width = document.body.clientWidth;
+            this.canvas.nativeElement.height = document.body.clientHeight;
+        }
+
         requestAnimationFrame( this.animate );
 
         this.iteration++;
