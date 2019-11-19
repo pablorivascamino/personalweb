@@ -1,0 +1,21 @@
+.content {
+	width: 100%;
+	text-align: center;
+	display:flex;
+	padding: 0 10em;
+}
+
+.about-content{
+	width: 100%;
+	text-align: left;
+}
+
+#avatar {
+	width: 100%;
+}
+
+#avatar img {
+	width: 15em;
+	height: 15em;
+}
+

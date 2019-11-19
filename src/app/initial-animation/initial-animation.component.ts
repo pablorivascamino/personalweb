@@ -31,7 +31,7 @@ export class InitialAnimationComponent implements OnInit {
         this.windowWidth = document.body.clientWidth;
         this.windowHeight = document.body.clientHeight;
 
-        fromEvent( document.body, 'mousemove' ).subscribe( e => {
+        fromEvent<MouseEvent>( document.body, 'mousemove' ).subscribe( e => {
             this.mouseX = e.pageX;
             this.mouseY = e.pageY;
         } )
@@ -72,11 +72,11 @@ export class InitialAnimationComponent implements OnInit {
         this.ctx.clearRect( 0, 0, this.windowWidth, this.windowHeight );
 
         this.initializePoints( this.canvas );
-
+        /*
         this.canvas.nativeElement.addEventListener( 'mousemove', function( evt ) {
-            InitialAnimationComponent.mouseX = evt.clientX;
-            InitialAnimationComponent.mouseY = evt.clientY;
-        }, false );
+            this.mouseX = evt.clientX;
+            this.mouseY = evt.clientY;
+        }, false );*/
     }
 
     getMousePos( canvas, evt ) {
@@ -109,7 +109,7 @@ export class InitialAnimationComponent implements OnInit {
                     this.ctx.lineTo( nextPoints[1].getPositionX(), nextPoints[1].getPositionY() );
                 }
                 this.ctx.fillStyle = this.points[i].getColor();
-
+    
                 this.ctx.closePath();
                 this.ctx.fill();
                 this.ctx.beginPath();

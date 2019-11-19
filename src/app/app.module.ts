@@ -12,14 +12,22 @@ import { InitialAnimationComponent } from './initial-animation/initial-animation
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+import { AboutInformationComponent } from './about-information/about-information.component';
+import { SkillsInformationComponent } from './skills-information/skills-information.component';
+
 @NgModule( {
     declarations: [
         AppComponent,
         InputUserDataFormComponent,
         InitialAnimationComponent,
-        NavBarComponent
+        NavBarComponent,
+        AboutInformationComponent,
+        SkillsInformationComponent
     ],
     imports: [
+        ScrollToModule.forRoot(),
         BrowserAnimationsModule,
         FontAwesomeModule,
         HttpClientModule,

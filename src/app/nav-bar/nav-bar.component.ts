@@ -21,10 +21,10 @@ export class NavBarComponent implements OnInit {
         const canvasHeight = +document.getElementById( 'animation_canvas' ).getAttribute( 'height' );
 
         if ( window.pageYOffset > canvasHeight ) {
-            let element = document.getElementById( 'navbar' );
+            let element = document.getElementById( 'navbar_container' );
             element.classList.add( 'sticky' );
         } else {
-            let element = document.getElementById( 'navbar' );
+            let element = document.getElementById( 'navbar_container' );
             element.classList.remove( 'sticky' );
         }
     }

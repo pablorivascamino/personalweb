@@ -7,7 +7,7 @@
 			<div>
 				Soy <span class="primary-color">Pablo Rivas Camino</span> y este es mi portfolio
 			</div>
-			<div class="my_button">
+			<div class="my_button" [ngx-scroll-to]="'#about-information'">
 					Ver mi ficha 
 					<div class="fa-icon" style="margin-left: 0.25em">
 						<fa-icon class="fa-icon" [icon]="faArrowRight"></fa-icon>
@@ -19,4 +19,6 @@
 	
 </div>
 <nav-bar></nav-bar>
+<about-information></about-information>
+<skills-information></skills-information>
 <input-user-data-form></input-user-data-form>
