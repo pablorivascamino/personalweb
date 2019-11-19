@@ -1,6 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { AnimationPoint } from 'src/app/initial-animation/animation-point';
 import { angularMath } from 'angular-ts-math/dist/angular-ts-math';
+import { Observable, fromEvent } from 'rxjs';
 
 @Component( {
     selector: 'initial-animation',
@@ -8,8 +9,8 @@ import { angularMath } from 'angular-ts-math/dist/angular-ts-math';
     styleUrls: ['./initial-animation.component.css']
 } )
 export class InitialAnimationComponent implements OnInit {
-    static mouseX: number;
-    static mouseY: number;
+    mouseX: number;
+    mouseY: number;
 
     @ViewChild( 'canvas' )
     canvas: ElementRef<HTMLCanvasElement>;
@@ -29,28 +30,31 @@ export class InitialAnimationComponent implements OnInit {
     constructor() {
         this.windowHeight = window.innerHeight;
         this.windowWidth = window.innerWidth;
+
+        fromEvent( document.body, 'mousemove' ).subscribe( e => {
+            this.mouseX = e.pageX;
+            this.mouseY = e.pageY;
+        } )
     }
 
     onResize( event ) {
         this.windowWidth = event.target.innerWidth;
         this.windowHeight = event.target.innerHeight;
         this.canvas.nativeElement.width = event.target.innerWidth;
+        this.canvas.nativeElement.width = event.target.innerHeight;
+
         this.render();
     }
 
     ngOnInit() {
         this.render();
+        this.animate();
+
     }
 
     private initializePoints( canvas: ElementRef<HTMLCanvasElement> ) {
-        this.polygon.push( 2 * canvas.nativeElement.width / 7, canvas.nativeElement.height / 7 );
-        this.polygon.push( 5 * canvas.nativeElement.width / 7, canvas.nativeElement.height / 7 );
 
-        this.polygon.push( canvas.nativeElement.width / 7, 2 * canvas.nativeElement.height / 7 );
-        this.polygon.push( 6 * canvas.nativeElement.width / 7, 2 * canvas.nativeElement.height / 7 );
-
-        this.polygon.push( 2 * canvas.nativeElement.width / 7, 6 * canvas.nativeElement.height / 7 );
-        this.polygon.push( 5 * canvas.nativeElement.width / 7, 6 * canvas.nativeElement.height / 7 );
+        this.points = [];
 
         for ( var i = 0; i < this.N_POINTS; i++ ) {
             this.points.push( new AnimationPoint( this.randomRange( 0, canvas.nativeElement.width ),
@@ -70,7 +74,6 @@ export class InitialAnimationComponent implements OnInit {
         this.ctx.clearRect( 0, 0, this.windowWidth, this.windowHeight );
 
         this.initializePoints( this.canvas );
-        this.animate();
 
         this.canvas.nativeElement.addEventListener( 'mousemove', function( evt ) {
             InitialAnimationComponent.mouseX = evt.clientX;
@@ -83,7 +86,6 @@ export class InitialAnimationComponent implements OnInit {
     }
 
     animate = () => {
-
         requestAnimationFrame( this.animate );
 
         this.iteration++;
@@ -125,8 +127,8 @@ export class InitialAnimationComponent implements OnInit {
     }
 
     private isPointCloseToMouse( point: AnimationPoint, radious: number ): boolean {
-        return ( InitialAnimationComponent.mouseX < point.getPositionX() + radious && InitialAnimationComponent.mouseX > point.getPositionX() - radious
-            && InitialAnimationComponent.mouseY < point.getPositionY() + radious && InitialAnimationComponent.mouseY > point.getPositionY() - radious );
+        return ( this.mouseX < point.getPositionX() + radious && this.mouseX > point.getPositionX() - radious
+            && this.mouseY < point.getPositionY() + radious && this.mouseY > point.getPositionY() - radious );
     }
 
 }
