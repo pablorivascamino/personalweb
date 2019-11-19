@@ -3,3 +3,29 @@ app-root .container-fluid{
 	margin: 0em;
 	padding: 0em;
 }
+
+body{
+	font-family: 'Raleway';
+    font-weight: 500;
+}
+
+.primary-color {
+	font-weight: 600;
+	color: #1B9AAA;
+}
+
+.my_button {
+	background: none;
+    padding: 10px 20px;
+    border: 2px solid #fff;
+    box-sizing: inherit;
+    display: inline-block;
+    font-size: 13pt;
+    transition: all .5s;
+    cursor: pointer;
+}
+
+.my_button:hover{
+	background: #1B9AAA;
+	border-color:#1B9AAA;
+}

@@ -9,6 +9,7 @@ import { InputUserDataFormComponent } from './input-user-data-form/input-user-da
 
 import { MessageService } from './services/message.service';
 import { InitialAnimationComponent } from './initial-animation/initial-animation.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule( {
     declarations: [
@@ -17,6 +18,7 @@ import { InitialAnimationComponent } from './initial-animation/initial-animation
         InitialAnimationComponent
     ],
     imports: [
+        FontAwesomeModule,
         HttpClientModule,
         BrowserModule,
         AppRoutingModule,

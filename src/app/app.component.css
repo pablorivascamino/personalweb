@@ -1,11 +1,88 @@
+@-webkit-keyframes rotate /* Safari and Chrome */ {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+}
+@keyframes rotate {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+}
+
+@-webkit-keyframes rotate2 /* Safari and Chrome */ {
+  from {
+    -webkit-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+@keyframes rotate2 {
+  from {
+    -ms-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+  to {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
 canvas{
 	position:absolute;
 	width: 100%;
 }
 
 .main_container{
-	height: 100%;
 	position:relative;
+}
+
+.my_button{
+	display: flex;
+}
+
+.my_button .fa-icon{
+	font-size: 13pt;
+	animation: rotate2 0.5s;
+	animation-fill-mode: forwards;	    
+}
+
+.my_button:hover .fa-icon{
+	-webkit-transition: 0.5s forwards;
+    -moz-transition: 0.5s forwards;
+    -o-transition: 0.5s forwards;
+    transition: 0.5s forwards;
+    /* Use the animation name with additional properties */
+    animation: rotate 0.5s;
+    animation-fill-mode: forwards;
 }
 
 .main_header {
@@ -14,7 +91,6 @@ canvas{
 	top:0;
 	position: absolute;
     color: #ffffff;
-    font-size: 5em;
     text-align: center;
 	align-items: center;
 	justify-content: center;
@@ -22,7 +98,8 @@ canvas{
 
 .main_header_content {
 	height: 100%;
-	width: 100%;
+	font-size: 3em;
+	width: 50%;
 	margin: auto;
 	display: flex;
 	text-align: center;

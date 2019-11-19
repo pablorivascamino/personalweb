@@ -38,9 +38,9 @@ export class AnimationPoint {
 
     public getColor() {
 
-        var r = ( this.maxRadious - this.radious ) * this.radious / this.maxRadious;
-        var g = ( this.maxRadious - this.radious ) * 66 / this.maxRadious;
-        var b = 21 + ( this.maxRadious - this.radious ) * 187 / this.maxRadious;
+        var r = ( this.maxRadious - this.radious ) * 255 / this.maxRadious;
+        var g = ( this.maxRadious - this.radious ) * 255 / this.maxRadious;
+        var b = 21 + ( this.maxRadious - this.radious ) * 255 / this.maxRadious;
 
         return 'rgba(' + r + ',' + g + ',' + b + ')';
     }
@@ -51,6 +51,8 @@ export class AnimationPoint {
             this.radious += this.radiousVelocity;
         }
         if ( this.radious >= this.maxRadious ) {
+            this.positionX = this.randomRange( 0, this.canvas.nativeElement.width );
+            this.positionY = this.randomRange( 0, this.canvas.nativeElement.height );
             this.radious = 0;
         }
 
