@@ -38,6 +38,13 @@ h1{
 	color: #1C5D99;
 }
 
+.content {
+	width: 100%;
+	text-align: center;
+	display:flex;
+	padding: 0 10em;
+}
+
 .section-line {
 	margin: auto;
 	width: 6em;

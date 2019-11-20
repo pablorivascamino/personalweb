@@ -16,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import { AboutInformationComponent } from './about-information/about-information.component';
 import { SkillsInformationComponent } from './skills-information/skills-information.component';
+import { InViewportModule } from 'ng-in-viewport';
 
 @NgModule( {
     declarations: [
@@ -27,6 +28,7 @@ import { SkillsInformationComponent } from './skills-information/skills-informat
         SkillsInformationComponent
     ],
     imports: [
+        InViewportModule,
         ScrollToModule.forRoot(),
         BrowserAnimationsModule,
         FontAwesomeModule,
