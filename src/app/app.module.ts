@@ -17,6 +17,7 @@ import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import { AboutInformationComponent } from './about-information/about-information.component';
 import { SkillsInformationComponent } from './skills-information/skills-information.component';
 import { InViewportModule } from 'ng-in-viewport';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule( {
     declarations: [
@@ -25,7 +26,8 @@ import { InViewportModule } from 'ng-in-viewport';
         InitialAnimationComponent,
         NavBarComponent,
         AboutInformationComponent,
-        SkillsInformationComponent
+        SkillsInformationComponent,
+        FooterComponent
     ],
     imports: [
         InViewportModule,

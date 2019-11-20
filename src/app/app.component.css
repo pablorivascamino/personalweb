@@ -96,6 +96,9 @@ canvas{
 	align-items: center;
 	justify-content: center;
 }
+.sticky-padding{
+  padding-top: 10em;
+}
 
 .main_header_content {
 	height: 100%;

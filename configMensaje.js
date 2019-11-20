@@ -10,7 +10,7 @@ module.exports = (formulario) => {
 });
 
 const mailOptions = {
-		from: formulario.mail,
+		from: formulario.email,
 		to: 'transporttrackerapp@gmail.com', // Cambia esta parte por el destinatario
 		subject: 'Email from '+formulario.email,
 		html: formulario.name +' wrote: ' + formulario.message

@@ -98,7 +98,7 @@
 
 .skill {
 	margin:auto;
-	background-color: #1B9AAA;
+	background-color: #FFFFFF;
 	width: 5em;
 	height: 5em;
 	border-radius: 50%;
@@ -109,5 +109,20 @@
 	line-height:5em;
 	padding: 0;
 }
+
+.skill2 img{
+	width: 3em;
+	height: 3em;
+}
+
+.imageSkill{
+	background-color: #e6e6e6 !important;
+}
+
+.skill-image-description{
+	padding-top: 1em;
+	color: #000000;
+}
+
 
 /****/
