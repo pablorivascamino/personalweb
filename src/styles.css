@@ -31,7 +31,8 @@ body{
 }
 
 h1{
-	width:100%;
+	width:50%;
+	margin: auto;
 	text-align: center;
 	font-weight: bold;
 	padding: 1em 0.5em 0.25em 0.5em;

@@ -82,6 +82,7 @@
 	text-align: center;
 	width: 100%;
 	margin-bottom: 1em;
+	display: flex !important;
 }
 
 .skill2{
@@ -126,3 +127,27 @@
 
 
 /****/
+
+.container{
+	margin: 0;
+	width: auto;	
+}
+
+@media (min-width: 3000px) {
+
+}
+
+@media (max-width: 800px) {
+	.skill-container{
+	}
+	.skill2 {
+		font-size: 0.6em;
+		
+	}
+}
+
+@media (max-width: 1220px) {
+	.content{
+		display: block;
+	}
+}
