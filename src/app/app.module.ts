@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +18,12 @@ import { AboutInformationComponent } from './about-information/about-information
 import { SkillsInformationComponent } from './skills-information/skills-information.component';
 import { InViewportModule } from 'ng-in-viewport';
 import { FooterComponent } from './footer/footer.component';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+
+export function translateHttpLoaderFactory( http: HttpClient ) {
+    return new TranslateHttpLoader( http );
+}
 
 @NgModule( {
     declarations: [
@@ -38,7 +44,14 @@ import { FooterComponent } from './footer/footer.component';
         BrowserModule,
         AppRoutingModule,
         ReactiveFormsModule,
-        FormsModule
+        FormsModule,
+        TranslateModule.forRoot( {
+            loader: {
+                provide: TranslateLoader,
+                useFactory: translateHttpLoaderFactory,
+                deps: [HttpClient]
+            }
+        } )
     ],
     providers: [MessageService],
     bootstrap: [AppComponent]
