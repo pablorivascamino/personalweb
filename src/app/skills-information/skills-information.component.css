@@ -150,4 +150,25 @@
 	.content{
 		display: block;
 	}
+	.skill_category_icon {
+    	margin-left: 0em;
+	}
+	.skillbars{
+		padding-left: 0;
+	}
+}
+
+@media print{
+
+	.dotnet-skill{
+		margin-bottom: 5em;
+	}
+	
+	.skill_category_icon{
+		margin-top: 2em;
+	}
+	
+    .out-of-view{
+		width: unset !important;		
+	}
 }

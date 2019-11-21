@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDoubleUp, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 @Component( {
     selector: 'footer',
@@ -9,6 +9,8 @@ import { faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons';
 export class FooterComponent implements OnInit {
 
     faArrowRight = faAngleDoubleUp;
+    faEmail = faEnvelope;
+    faPhone = faPhone;
 
     constructor() { }
 

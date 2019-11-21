@@ -38,3 +38,30 @@
 	background: #1B9AAA;
 	border-color:#1B9AAA;
 }
+
+.print_contact_information{
+	width: 100%;
+	text-align: center;
+	background-color: #343a40;
+	color: #FFFFFF;
+	display: none;
+	padding: 2em 0;
+}
+
+.print_contact_information *{
+	margin: auto;
+}
+@media print{
+	.print_contact_information{
+		display: flex;
+	}
+	
+	.return-button{
+		display:none;
+	}
+	
+	.section-line{
+		margin: 0 auto !important;	
+	}
+}
+

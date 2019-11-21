@@ -25,3 +25,9 @@
   margin-bottom: 0 !important;
   padding-bottom: 1rem;
 }
+
+@media print{
+	#contactForm {
+		display: none !important;
+	}
+}
