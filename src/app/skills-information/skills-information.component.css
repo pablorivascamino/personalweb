@@ -25,8 +25,8 @@
 	height: 5em;
 }
 
-.skill_category_icon h2 {
-	font-size: 1em;
+.skill_category h2 {
+	margin-top: 1.4em;
 }
 
 .skill_category_icon {
@@ -157,6 +157,19 @@
 		padding-left: 0;
 	}
 }
+
+@media (max-width: 500px) {
+	.skill_category_icon h2{
+		font-size: 1.25rem;
+		margin-top: 0.5em;
+	}
+	
+	.pb-label ,.pb-percent{
+		font-size: 8px !important;
+		padding: 0 !important; 
+	}
+}
+
 
 @media print{
 
