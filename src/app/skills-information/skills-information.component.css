@@ -11,10 +11,6 @@
 	width: 100%;
 }
 
-.out-of-view {
-	width: 0% !important;
-}
-
 .skillbars {
 	width: 100%;
 	padding-left: 2em;
@@ -155,6 +151,13 @@
 	}
 	.skillbars{
 		padding-left: 0;
+	}
+}
+
+@media (min-width: 500px) {
+
+	.out-of-view {
+		width: 0% !important;
 	}
 }
 
