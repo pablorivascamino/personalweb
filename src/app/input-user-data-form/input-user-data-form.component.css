@@ -26,8 +26,8 @@
   padding-bottom: 1rem;
 }
 
-@media print{
+/**@media print{**/
 	#contactForm {
 		display: none !important;
 	}
-}
+/**}**/

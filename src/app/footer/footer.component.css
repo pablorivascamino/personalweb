@@ -3,9 +3,21 @@
 	background-color: #343a40;
 }
 
+.footer_top h1{
+	color: #FFFFFF !important;
+}
+
+.footer_top .section-line{
+	background-color: #FFFFFF;
+}
+
 .footer_container *{
 	margin: auto;
-	padding: 2em 0;
+	padding: 1em;
+}
+
+.pabloRivasLabel{
+	padding: 0 2em;	
 }
 
 .footer_container{
@@ -45,13 +57,14 @@
 	background-color: #343a40;
 	color: #FFFFFF;
 	display: none;
-	padding: 2em 0;
+	padding: 0 0 2em 0;
 }
 
 .print_contact_information *{
 	margin: auto;
 }
-@media print{
+/** @media print{ **/
+
 	.print_contact_information{
 		display: flex;
 	}
@@ -63,5 +76,5 @@
 	.section-line{
 		margin: 0 auto !important;	
 	}
-}
+/**} **/
 
